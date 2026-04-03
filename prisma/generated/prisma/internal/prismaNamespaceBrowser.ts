@@ -79,7 +79,7 @@ export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof
 
 export const CategoryScalarFieldEnum = {
   id: 'id',
-  name: 'name',
+  cuisineName: 'cuisineName',
   description: 'description',
   isActive: 'isActive',
   createdAt: 'createdAt',
@@ -108,7 +108,8 @@ export const MealCategoryScalarFieldEnum = {
   categoryId: 'categoryId',
   mealId: 'mealId',
   createdAt: 'createdAt',
-  updateAt: 'updateAt'
+  updateAt: 'updateAt',
+  dietaryPreference: 'dietaryPreference'
 } as const
 
 export type MealCategoryScalarFieldEnum = (typeof MealCategoryScalarFieldEnum)[keyof typeof MealCategoryScalarFieldEnum]

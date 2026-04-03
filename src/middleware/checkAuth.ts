@@ -28,19 +28,20 @@ export const checkAuth=(...roles:UserRole[])=>{
             console.log("you are not unauthorized");
         }
 
-        console.log(roles);
+        // console.log(roles);
         const token= req.headers.authorization?.trim().split(" ")[1]
+        console.log(token);
         if(!token){
             console.log("you not have any token");
         }
 
-        const currentUser= Jwt.verify(token!,process.env.SECRET_KEY!)as string
+        const currentUser= Jwt.verify(token!,process.env.SECRET_KEY!)as JwtPayload
 
-        
+        // console.log(currentUser,"current");
         req.user={
-            id:currentUser.id,
-            name:currentUser.name,
-            email:currentUser.email
+            id:currentUser?.id,
+            name:currentUser?.name,
+            email:currentUser?.email
 
         }
         

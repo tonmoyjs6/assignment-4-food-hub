@@ -30,7 +30,13 @@ const loginUser:RequestHandler=async(req,res)=>{
 }
 
 const getCurrentUser=async(req:Request,res:Response)=>{
-    const result= await authService.getCurrentUser()
+    
+    try {
+        const result= await authService.getCurrentUser(req.user!)
+        res.status(200).json({result})
+    } catch (error) {
+        
+    }
 
 }
 

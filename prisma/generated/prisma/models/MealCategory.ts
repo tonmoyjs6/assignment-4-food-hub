@@ -30,6 +30,7 @@ export type MealCategoryMinAggregateOutputType = {
   mealId: string | null
   createdAt: Date | null
   updateAt: Date | null
+  dietaryPreference: $Enums.DietaryPreferenceInclude | null
 }
 
 export type MealCategoryMaxAggregateOutputType = {
@@ -38,6 +39,7 @@ export type MealCategoryMaxAggregateOutputType = {
   mealId: string | null
   createdAt: Date | null
   updateAt: Date | null
+  dietaryPreference: $Enums.DietaryPreferenceInclude | null
 }
 
 export type MealCategoryCountAggregateOutputType = {
@@ -46,6 +48,7 @@ export type MealCategoryCountAggregateOutputType = {
   mealId: number
   createdAt: number
   updateAt: number
+  dietaryPreference: number
   _all: number
 }
 
@@ -56,6 +59,7 @@ export type MealCategoryMinAggregateInputType = {
   mealId?: true
   createdAt?: true
   updateAt?: true
+  dietaryPreference?: true
 }
 
 export type MealCategoryMaxAggregateInputType = {
@@ -64,6 +68,7 @@ export type MealCategoryMaxAggregateInputType = {
   mealId?: true
   createdAt?: true
   updateAt?: true
+  dietaryPreference?: true
 }
 
 export type MealCategoryCountAggregateInputType = {
@@ -72,6 +77,7 @@ export type MealCategoryCountAggregateInputType = {
   mealId?: true
   createdAt?: true
   updateAt?: true
+  dietaryPreference?: true
   _all?: true
 }
 
@@ -153,6 +159,7 @@ export type MealCategoryGroupByOutputType = {
   mealId: string
   createdAt: Date
   updateAt: Date
+  dietaryPreference: $Enums.DietaryPreferenceInclude
   _count: MealCategoryCountAggregateOutputType | null
   _min: MealCategoryMinAggregateOutputType | null
   _max: MealCategoryMaxAggregateOutputType | null
@@ -182,6 +189,7 @@ export type MealCategoryWhereInput = {
   mealId?: Prisma.StringFilter<"MealCategory"> | string
   createdAt?: Prisma.DateTimeFilter<"MealCategory"> | Date | string
   updateAt?: Prisma.DateTimeFilter<"MealCategory"> | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFilter<"MealCategory"> | $Enums.DietaryPreferenceInclude
   categoryInfo?: Prisma.XOR<Prisma.CategoryScalarRelationFilter, Prisma.CategoryWhereInput>
   mealinfo?: Prisma.XOR<Prisma.MealScalarRelationFilter, Prisma.MealWhereInput>
 }
@@ -192,6 +200,7 @@ export type MealCategoryOrderByWithRelationInput = {
   mealId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updateAt?: Prisma.SortOrder
+  dietaryPreference?: Prisma.SortOrder
   categoryInfo?: Prisma.CategoryOrderByWithRelationInput
   mealinfo?: Prisma.MealOrderByWithRelationInput
 }
@@ -205,6 +214,7 @@ export type MealCategoryWhereUniqueInput = Prisma.AtLeast<{
   mealId?: Prisma.StringFilter<"MealCategory"> | string
   createdAt?: Prisma.DateTimeFilter<"MealCategory"> | Date | string
   updateAt?: Prisma.DateTimeFilter<"MealCategory"> | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFilter<"MealCategory"> | $Enums.DietaryPreferenceInclude
   categoryInfo?: Prisma.XOR<Prisma.CategoryScalarRelationFilter, Prisma.CategoryWhereInput>
   mealinfo?: Prisma.XOR<Prisma.MealScalarRelationFilter, Prisma.MealWhereInput>
 }, "id">
@@ -215,6 +225,7 @@ export type MealCategoryOrderByWithAggregationInput = {
   mealId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updateAt?: Prisma.SortOrder
+  dietaryPreference?: Prisma.SortOrder
   _count?: Prisma.MealCategoryCountOrderByAggregateInput
   _max?: Prisma.MealCategoryMaxOrderByAggregateInput
   _min?: Prisma.MealCategoryMinOrderByAggregateInput
@@ -229,12 +240,14 @@ export type MealCategoryScalarWhereWithAggregatesInput = {
   mealId?: Prisma.StringWithAggregatesFilter<"MealCategory"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"MealCategory"> | Date | string
   updateAt?: Prisma.DateTimeWithAggregatesFilter<"MealCategory"> | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeWithAggregatesFilter<"MealCategory"> | $Enums.DietaryPreferenceInclude
 }
 
 export type MealCategoryCreateInput = {
   id?: string
   createdAt?: Date | string
   updateAt?: Date | string
+  dietaryPreference?: $Enums.DietaryPreferenceInclude
   categoryInfo: Prisma.CategoryCreateNestedOneWithoutMealCategoriesInput
   mealinfo: Prisma.MealCreateNestedOneWithoutMealCategoriesInput
 }
@@ -245,12 +258,14 @@ export type MealCategoryUncheckedCreateInput = {
   mealId: string
   createdAt?: Date | string
   updateAt?: Date | string
+  dietaryPreference?: $Enums.DietaryPreferenceInclude
 }
 
 export type MealCategoryUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updateAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFieldUpdateOperationsInput | $Enums.DietaryPreferenceInclude
   categoryInfo?: Prisma.CategoryUpdateOneRequiredWithoutMealCategoriesNestedInput
   mealinfo?: Prisma.MealUpdateOneRequiredWithoutMealCategoriesNestedInput
 }
@@ -261,6 +276,7 @@ export type MealCategoryUncheckedUpdateInput = {
   mealId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updateAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFieldUpdateOperationsInput | $Enums.DietaryPreferenceInclude
 }
 
 export type MealCategoryCreateManyInput = {
@@ -269,12 +285,14 @@ export type MealCategoryCreateManyInput = {
   mealId: string
   createdAt?: Date | string
   updateAt?: Date | string
+  dietaryPreference?: $Enums.DietaryPreferenceInclude
 }
 
 export type MealCategoryUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updateAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFieldUpdateOperationsInput | $Enums.DietaryPreferenceInclude
 }
 
 export type MealCategoryUncheckedUpdateManyInput = {
@@ -283,6 +301,7 @@ export type MealCategoryUncheckedUpdateManyInput = {
   mealId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updateAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFieldUpdateOperationsInput | $Enums.DietaryPreferenceInclude
 }
 
 export type MealCategoryListRelationFilter = {
@@ -301,6 +320,7 @@ export type MealCategoryCountOrderByAggregateInput = {
   mealId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updateAt?: Prisma.SortOrder
+  dietaryPreference?: Prisma.SortOrder
 }
 
 export type MealCategoryMaxOrderByAggregateInput = {
@@ -309,6 +329,7 @@ export type MealCategoryMaxOrderByAggregateInput = {
   mealId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updateAt?: Prisma.SortOrder
+  dietaryPreference?: Prisma.SortOrder
 }
 
 export type MealCategoryMinOrderByAggregateInput = {
@@ -317,6 +338,7 @@ export type MealCategoryMinOrderByAggregateInput = {
   mealId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updateAt?: Prisma.SortOrder
+  dietaryPreference?: Prisma.SortOrder
 }
 
 export type MealCategoryCreateNestedManyWithoutCategoryInfoInput = {
@@ -403,10 +425,15 @@ export type MealCategoryUncheckedUpdateManyWithoutMealinfoNestedInput = {
   deleteMany?: Prisma.MealCategoryScalarWhereInput | Prisma.MealCategoryScalarWhereInput[]
 }
 
+export type EnumDietaryPreferenceIncludeFieldUpdateOperationsInput = {
+  set?: $Enums.DietaryPreferenceInclude
+}
+
 export type MealCategoryCreateWithoutCategoryInfoInput = {
   id?: string
   createdAt?: Date | string
   updateAt?: Date | string
+  dietaryPreference?: $Enums.DietaryPreferenceInclude
   mealinfo: Prisma.MealCreateNestedOneWithoutMealCategoriesInput
 }
 
@@ -415,6 +442,7 @@ export type MealCategoryUncheckedCreateWithoutCategoryInfoInput = {
   mealId: string
   createdAt?: Date | string
   updateAt?: Date | string
+  dietaryPreference?: $Enums.DietaryPreferenceInclude
 }
 
 export type MealCategoryCreateOrConnectWithoutCategoryInfoInput = {
@@ -452,12 +480,14 @@ export type MealCategoryScalarWhereInput = {
   mealId?: Prisma.StringFilter<"MealCategory"> | string
   createdAt?: Prisma.DateTimeFilter<"MealCategory"> | Date | string
   updateAt?: Prisma.DateTimeFilter<"MealCategory"> | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFilter<"MealCategory"> | $Enums.DietaryPreferenceInclude
 }
 
 export type MealCategoryCreateWithoutMealinfoInput = {
   id?: string
   createdAt?: Date | string
   updateAt?: Date | string
+  dietaryPreference?: $Enums.DietaryPreferenceInclude
   categoryInfo: Prisma.CategoryCreateNestedOneWithoutMealCategoriesInput
 }
 
@@ -466,6 +496,7 @@ export type MealCategoryUncheckedCreateWithoutMealinfoInput = {
   categoryId: string
   createdAt?: Date | string
   updateAt?: Date | string
+  dietaryPreference?: $Enums.DietaryPreferenceInclude
 }
 
 export type MealCategoryCreateOrConnectWithoutMealinfoInput = {
@@ -499,12 +530,14 @@ export type MealCategoryCreateManyCategoryInfoInput = {
   mealId: string
   createdAt?: Date | string
   updateAt?: Date | string
+  dietaryPreference?: $Enums.DietaryPreferenceInclude
 }
 
 export type MealCategoryUpdateWithoutCategoryInfoInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updateAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFieldUpdateOperationsInput | $Enums.DietaryPreferenceInclude
   mealinfo?: Prisma.MealUpdateOneRequiredWithoutMealCategoriesNestedInput
 }
 
@@ -513,6 +546,7 @@ export type MealCategoryUncheckedUpdateWithoutCategoryInfoInput = {
   mealId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updateAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFieldUpdateOperationsInput | $Enums.DietaryPreferenceInclude
 }
 
 export type MealCategoryUncheckedUpdateManyWithoutCategoryInfoInput = {
@@ -520,6 +554,7 @@ export type MealCategoryUncheckedUpdateManyWithoutCategoryInfoInput = {
   mealId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updateAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFieldUpdateOperationsInput | $Enums.DietaryPreferenceInclude
 }
 
 export type MealCategoryCreateManyMealinfoInput = {
@@ -527,12 +562,14 @@ export type MealCategoryCreateManyMealinfoInput = {
   categoryId: string
   createdAt?: Date | string
   updateAt?: Date | string
+  dietaryPreference?: $Enums.DietaryPreferenceInclude
 }
 
 export type MealCategoryUpdateWithoutMealinfoInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updateAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFieldUpdateOperationsInput | $Enums.DietaryPreferenceInclude
   categoryInfo?: Prisma.CategoryUpdateOneRequiredWithoutMealCategoriesNestedInput
 }
 
@@ -541,6 +578,7 @@ export type MealCategoryUncheckedUpdateWithoutMealinfoInput = {
   categoryId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updateAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFieldUpdateOperationsInput | $Enums.DietaryPreferenceInclude
 }
 
 export type MealCategoryUncheckedUpdateManyWithoutMealinfoInput = {
@@ -548,6 +586,7 @@ export type MealCategoryUncheckedUpdateManyWithoutMealinfoInput = {
   categoryId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updateAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFieldUpdateOperationsInput | $Enums.DietaryPreferenceInclude
 }
 
 
@@ -558,6 +597,7 @@ export type MealCategorySelect<ExtArgs extends runtime.Types.Extensions.Internal
   mealId?: boolean
   createdAt?: boolean
   updateAt?: boolean
+  dietaryPreference?: boolean
   categoryInfo?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
   mealinfo?: boolean | Prisma.MealDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["mealCategory"]>
@@ -568,6 +608,7 @@ export type MealCategorySelectCreateManyAndReturn<ExtArgs extends runtime.Types.
   mealId?: boolean
   createdAt?: boolean
   updateAt?: boolean
+  dietaryPreference?: boolean
   categoryInfo?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
   mealinfo?: boolean | Prisma.MealDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["mealCategory"]>
@@ -578,6 +619,7 @@ export type MealCategorySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.
   mealId?: boolean
   createdAt?: boolean
   updateAt?: boolean
+  dietaryPreference?: boolean
   categoryInfo?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
   mealinfo?: boolean | Prisma.MealDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["mealCategory"]>
@@ -588,9 +630,10 @@ export type MealCategorySelectScalar = {
   mealId?: boolean
   createdAt?: boolean
   updateAt?: boolean
+  dietaryPreference?: boolean
 }
 
-export type MealCategoryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "categoryId" | "mealId" | "createdAt" | "updateAt", ExtArgs["result"]["mealCategory"]>
+export type MealCategoryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "categoryId" | "mealId" | "createdAt" | "updateAt" | "dietaryPreference", ExtArgs["result"]["mealCategory"]>
 export type MealCategoryInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   categoryInfo?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
   mealinfo?: boolean | Prisma.MealDefaultArgs<ExtArgs>
@@ -616,6 +659,7 @@ export type $MealCategoryPayload<ExtArgs extends runtime.Types.Extensions.Intern
     mealId: string
     createdAt: Date
     updateAt: Date
+    dietaryPreference: $Enums.DietaryPreferenceInclude
   }, ExtArgs["result"]["mealCategory"]>
   composites: {}
 }
@@ -1046,6 +1090,7 @@ export interface MealCategoryFieldRefs {
   readonly mealId: Prisma.FieldRef<"MealCategory", 'String'>
   readonly createdAt: Prisma.FieldRef<"MealCategory", 'DateTime'>
   readonly updateAt: Prisma.FieldRef<"MealCategory", 'DateTime'>
+  readonly dietaryPreference: Prisma.FieldRef<"MealCategory", 'DietaryPreferenceInclude'>
 }
     
 

@@ -9,6 +9,7 @@ model Meal{
     price Int
     createdAt DateTime @default(now())
     updateAt DateTime @updatedAt
+    
 
 
 

@@ -56,8 +56,22 @@ const loginUser=async({password,email}:{password:string,email:string})=>{
 
 
 
-const getCurrentUser=async()=>{
-    console.log("this my profile");
+const getCurrentUser=async({id,name,email}:{id:string,name:string,email:string})=>{
+    
+
+    try {
+        const result= await prisma.user.findUnique({
+            where:{
+                id,
+                email
+            }
+        })
+        
+        return result
+        
+    } catch (error) {
+        
+    }
 
 }
 

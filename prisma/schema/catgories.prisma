@@ -1,8 +1,8 @@
 
-
+// food categories
 model Category{
     id String @id @default(uuid())
-    name String? 
+    cuisineName   String
     description String?
     isActive Boolean
     createdAt DateTime @default(now())

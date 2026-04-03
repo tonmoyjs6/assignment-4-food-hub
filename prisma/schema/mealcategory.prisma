@@ -9,4 +9,10 @@ model MealCategory{
     mealId String
     createdAt DateTime @default(now())
     updateAt DateTime @updatedAt
+    dietaryPreference DietaryPreferenceInclude @default(HALAL)
+}
+
+enum DietaryPreferenceInclude{
+    VEGAN
+    HALAL
 }

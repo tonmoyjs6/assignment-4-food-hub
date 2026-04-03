@@ -26,7 +26,7 @@ export type AggregateCategory = {
 
 export type CategoryMinAggregateOutputType = {
   id: string | null
-  name: string | null
+  cuisineName: string | null
   description: string | null
   isActive: boolean | null
   createdAt: Date | null
@@ -36,7 +36,7 @@ export type CategoryMinAggregateOutputType = {
 
 export type CategoryMaxAggregateOutputType = {
   id: string | null
-  name: string | null
+  cuisineName: string | null
   description: string | null
   isActive: boolean | null
   createdAt: Date | null
@@ -46,7 +46,7 @@ export type CategoryMaxAggregateOutputType = {
 
 export type CategoryCountAggregateOutputType = {
   id: number
-  name: number
+  cuisineName: number
   description: number
   isActive: number
   createdAt: number
@@ -58,7 +58,7 @@ export type CategoryCountAggregateOutputType = {
 
 export type CategoryMinAggregateInputType = {
   id?: true
-  name?: true
+  cuisineName?: true
   description?: true
   isActive?: true
   createdAt?: true
@@ -68,7 +68,7 @@ export type CategoryMinAggregateInputType = {
 
 export type CategoryMaxAggregateInputType = {
   id?: true
-  name?: true
+  cuisineName?: true
   description?: true
   isActive?: true
   createdAt?: true
@@ -78,7 +78,7 @@ export type CategoryMaxAggregateInputType = {
 
 export type CategoryCountAggregateInputType = {
   id?: true
-  name?: true
+  cuisineName?: true
   description?: true
   isActive?: true
   createdAt?: true
@@ -161,7 +161,7 @@ export type CategoryGroupByArgs<ExtArgs extends runtime.Types.Extensions.Interna
 
 export type CategoryGroupByOutputType = {
   id: string
-  name: string | null
+  cuisineName: string
   description: string | null
   isActive: boolean
   createdAt: Date
@@ -192,7 +192,7 @@ export type CategoryWhereInput = {
   OR?: Prisma.CategoryWhereInput[]
   NOT?: Prisma.CategoryWhereInput | Prisma.CategoryWhereInput[]
   id?: Prisma.StringFilter<"Category"> | string
-  name?: Prisma.StringNullableFilter<"Category"> | string | null
+  cuisineName?: Prisma.StringFilter<"Category"> | string
   description?: Prisma.StringNullableFilter<"Category"> | string | null
   isActive?: Prisma.BoolFilter<"Category"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Category"> | Date | string
@@ -204,7 +204,7 @@ export type CategoryWhereInput = {
 
 export type CategoryOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  name?: Prisma.SortOrderInput | Prisma.SortOrder
+  cuisineName?: Prisma.SortOrder
   description?: Prisma.SortOrderInput | Prisma.SortOrder
   isActive?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -219,7 +219,7 @@ export type CategoryWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.CategoryWhereInput | Prisma.CategoryWhereInput[]
   OR?: Prisma.CategoryWhereInput[]
   NOT?: Prisma.CategoryWhereInput | Prisma.CategoryWhereInput[]
-  name?: Prisma.StringNullableFilter<"Category"> | string | null
+  cuisineName?: Prisma.StringFilter<"Category"> | string
   description?: Prisma.StringNullableFilter<"Category"> | string | null
   isActive?: Prisma.BoolFilter<"Category"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Category"> | Date | string
@@ -231,7 +231,7 @@ export type CategoryWhereUniqueInput = Prisma.AtLeast<{
 
 export type CategoryOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  name?: Prisma.SortOrderInput | Prisma.SortOrder
+  cuisineName?: Prisma.SortOrder
   description?: Prisma.SortOrderInput | Prisma.SortOrder
   isActive?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -247,7 +247,7 @@ export type CategoryScalarWhereWithAggregatesInput = {
   OR?: Prisma.CategoryScalarWhereWithAggregatesInput[]
   NOT?: Prisma.CategoryScalarWhereWithAggregatesInput | Prisma.CategoryScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"Category"> | string
-  name?: Prisma.StringNullableWithAggregatesFilter<"Category"> | string | null
+  cuisineName?: Prisma.StringWithAggregatesFilter<"Category"> | string
   description?: Prisma.StringNullableWithAggregatesFilter<"Category"> | string | null
   isActive?: Prisma.BoolWithAggregatesFilter<"Category"> | boolean
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Category"> | Date | string
@@ -257,7 +257,7 @@ export type CategoryScalarWhereWithAggregatesInput = {
 
 export type CategoryCreateInput = {
   id?: string
-  name?: string | null
+  cuisineName: string
   description?: string | null
   isActive: boolean
   createdAt?: Date | string
@@ -268,7 +268,7 @@ export type CategoryCreateInput = {
 
 export type CategoryUncheckedCreateInput = {
   id?: string
-  name?: string | null
+  cuisineName: string
   description?: string | null
   isActive: boolean
   createdAt?: Date | string
@@ -279,7 +279,7 @@ export type CategoryUncheckedCreateInput = {
 
 export type CategoryUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cuisineName?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -290,7 +290,7 @@ export type CategoryUpdateInput = {
 
 export type CategoryUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cuisineName?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -301,7 +301,7 @@ export type CategoryUncheckedUpdateInput = {
 
 export type CategoryCreateManyInput = {
   id?: string
-  name?: string | null
+  cuisineName: string
   description?: string | null
   isActive: boolean
   createdAt?: Date | string
@@ -311,7 +311,7 @@ export type CategoryCreateManyInput = {
 
 export type CategoryUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cuisineName?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -320,7 +320,7 @@ export type CategoryUpdateManyMutationInput = {
 
 export type CategoryUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cuisineName?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -330,7 +330,7 @@ export type CategoryUncheckedUpdateManyInput = {
 
 export type CategoryCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  cuisineName?: Prisma.SortOrder
   description?: Prisma.SortOrder
   isActive?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -340,7 +340,7 @@ export type CategoryCountOrderByAggregateInput = {
 
 export type CategoryMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  cuisineName?: Prisma.SortOrder
   description?: Prisma.SortOrder
   isActive?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -350,7 +350,7 @@ export type CategoryMaxOrderByAggregateInput = {
 
 export type CategoryMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  cuisineName?: Prisma.SortOrder
   description?: Prisma.SortOrder
   isActive?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -447,7 +447,7 @@ export type CategoryUncheckedUpdateManyWithoutAdminProvideCategoryNestedInput = 
 
 export type CategoryCreateWithoutMealCategoriesInput = {
   id?: string
-  name?: string | null
+  cuisineName: string
   description?: string | null
   isActive: boolean
   createdAt?: Date | string
@@ -457,7 +457,7 @@ export type CategoryCreateWithoutMealCategoriesInput = {
 
 export type CategoryUncheckedCreateWithoutMealCategoriesInput = {
   id?: string
-  name?: string | null
+  cuisineName: string
   description?: string | null
   isActive: boolean
   createdAt?: Date | string
@@ -483,7 +483,7 @@ export type CategoryUpdateToOneWithWhereWithoutMealCategoriesInput = {
 
 export type CategoryUpdateWithoutMealCategoriesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cuisineName?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -493,7 +493,7 @@ export type CategoryUpdateWithoutMealCategoriesInput = {
 
 export type CategoryUncheckedUpdateWithoutMealCategoriesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cuisineName?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -503,7 +503,7 @@ export type CategoryUncheckedUpdateWithoutMealCategoriesInput = {
 
 export type CategoryCreateWithoutAdminProvideCategoryInput = {
   id?: string
-  name?: string | null
+  cuisineName: string
   description?: string | null
   isActive: boolean
   createdAt?: Date | string
@@ -513,7 +513,7 @@ export type CategoryCreateWithoutAdminProvideCategoryInput = {
 
 export type CategoryUncheckedCreateWithoutAdminProvideCategoryInput = {
   id?: string
-  name?: string | null
+  cuisineName: string
   description?: string | null
   isActive: boolean
   createdAt?: Date | string
@@ -552,7 +552,7 @@ export type CategoryScalarWhereInput = {
   OR?: Prisma.CategoryScalarWhereInput[]
   NOT?: Prisma.CategoryScalarWhereInput | Prisma.CategoryScalarWhereInput[]
   id?: Prisma.StringFilter<"Category"> | string
-  name?: Prisma.StringNullableFilter<"Category"> | string | null
+  cuisineName?: Prisma.StringFilter<"Category"> | string
   description?: Prisma.StringNullableFilter<"Category"> | string | null
   isActive?: Prisma.BoolFilter<"Category"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Category"> | Date | string
@@ -562,7 +562,7 @@ export type CategoryScalarWhereInput = {
 
 export type CategoryCreateManyAdminProvideCategoryInput = {
   id?: string
-  name?: string | null
+  cuisineName: string
   description?: string | null
   isActive: boolean
   createdAt?: Date | string
@@ -571,7 +571,7 @@ export type CategoryCreateManyAdminProvideCategoryInput = {
 
 export type CategoryUpdateWithoutAdminProvideCategoryInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cuisineName?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -581,7 +581,7 @@ export type CategoryUpdateWithoutAdminProvideCategoryInput = {
 
 export type CategoryUncheckedUpdateWithoutAdminProvideCategoryInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cuisineName?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -591,7 +591,7 @@ export type CategoryUncheckedUpdateWithoutAdminProvideCategoryInput = {
 
 export type CategoryUncheckedUpdateManyWithoutAdminProvideCategoryInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cuisineName?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -631,7 +631,7 @@ export type CategoryCountOutputTypeCountMealCategoriesArgs<ExtArgs extends runti
 
 export type CategorySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  name?: boolean
+  cuisineName?: boolean
   description?: boolean
   isActive?: boolean
   createdAt?: boolean
@@ -644,7 +644,7 @@ export type CategorySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
 
 export type CategorySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  name?: boolean
+  cuisineName?: boolean
   description?: boolean
   isActive?: boolean
   createdAt?: boolean
@@ -655,7 +655,7 @@ export type CategorySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
 
 export type CategorySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  name?: boolean
+  cuisineName?: boolean
   description?: boolean
   isActive?: boolean
   createdAt?: boolean
@@ -666,7 +666,7 @@ export type CategorySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
 
 export type CategorySelectScalar = {
   id?: boolean
-  name?: boolean
+  cuisineName?: boolean
   description?: boolean
   isActive?: boolean
   createdAt?: boolean
@@ -674,7 +674,7 @@ export type CategorySelectScalar = {
   userId?: boolean
 }
 
-export type CategoryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "description" | "isActive" | "createdAt" | "updatedAt" | "userId", ExtArgs["result"]["category"]>
+export type CategoryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "cuisineName" | "description" | "isActive" | "createdAt" | "updatedAt" | "userId", ExtArgs["result"]["category"]>
 export type CategoryInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   adminProvideCategory?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   mealCategories?: boolean | Prisma.Category$mealCategoriesArgs<ExtArgs>
@@ -695,7 +695,7 @@ export type $CategoryPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
-    name: string | null
+    cuisineName: string
     description: string | null
     isActive: boolean
     createdAt: Date
@@ -1127,7 +1127,7 @@ export interface Prisma__CategoryClient<T, Null = never, ExtArgs extends runtime
  */
 export interface CategoryFieldRefs {
   readonly id: Prisma.FieldRef<"Category", 'String'>
-  readonly name: Prisma.FieldRef<"Category", 'String'>
+  readonly cuisineName: Prisma.FieldRef<"Category", 'String'>
   readonly description: Prisma.FieldRef<"Category", 'String'>
   readonly isActive: Prisma.FieldRef<"Category", 'Boolean'>
   readonly createdAt: Prisma.FieldRef<"Category", 'DateTime'>

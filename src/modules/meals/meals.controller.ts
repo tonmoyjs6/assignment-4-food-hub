@@ -1,4 +1,4 @@
-import { RequestHandler } from "express"
+import { Request, RequestHandler, Response } from "express"
 import { mealsService } from "./meals.service"
 
 const createMeals: RequestHandler = async (req, res) => {
@@ -11,32 +11,35 @@ const createMeals: RequestHandler = async (req, res) => {
     }
 }
 
-const filterIngMeals: RequestHandler = async (req, res) => {
-    const { search, isAvailable ,maxprice,minprice} = req.query
-    console.log(minprice,maxprice);
+const getAllMeals=async(req:Request,res:Response)=>{
+    
+    
+    
 
 
     try {
-        const searchString = typeof search === "string" ? search : ""
-        const maxPriceConversion= typeof maxprice==="string"?Number(maxprice):undefined
-        const minPriceConversion= typeof minprice==="string"? Number(minprice):undefined
-        console.log(maxPriceConversion,minPriceConversion,"conversion");
-        // console.log(searchString);
-
-        const isAvailableBoolean = isAvailable === "true" ? true : isAvailable === "false" ? false : undefined
+        const result= await mealsService.getAllMeals()
+        res.status(200).json({
+            result
+        })
         
-        const result = await mealsService.filterIngMeals({searchString, isAvailableBoolean,maxPriceConversion,minPriceConversion })
-        res.status(200).json(result)
-
     } catch (error) {
-
+        
     }
 
+}
 
+const filterMeals=async(req:Request,res:Response)=>{
+
+    const result= await mealsService.filterMeals(req.query)
+    res.status(200).json({result})
+    
 }
 
 
 export const mealsController = {
     createMeals,
-    filterIngMeals
+    getAllMeals,
+    filterMeals
+    
 }

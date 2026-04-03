@@ -9,6 +9,14 @@
 * 🟢 You can import this file directly.
 */
 
+export const DietaryPreferenceInclude = {
+  VEGAN: 'VEGAN',
+  HALAL: 'HALAL'
+} as const
+
+export type DietaryPreferenceInclude = (typeof DietaryPreferenceInclude)[keyof typeof DietaryPreferenceInclude]
+
+
 export const UserRole = {
   CUSTOMER: 'CUSTOMER',
   ADMIN: 'ADMIN',

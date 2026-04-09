@@ -97,7 +97,8 @@ export const MealScalarFieldEnum = {
   isAvailable: 'isAvailable',
   price: 'price',
   createdAt: 'createdAt',
-  updateAt: 'updateAt'
+  updateAt: 'updateAt',
+  dietaryPreference: 'dietaryPreference'
 } as const
 
 export type MealScalarFieldEnum = (typeof MealScalarFieldEnum)[keyof typeof MealScalarFieldEnum]
@@ -108,8 +109,7 @@ export const MealCategoryScalarFieldEnum = {
   categoryId: 'categoryId',
   mealId: 'mealId',
   createdAt: 'createdAt',
-  updateAt: 'updateAt',
-  dietaryPreference: 'dietaryPreference'
+  updateAt: 'updateAt'
 } as const
 
 export type MealCategoryScalarFieldEnum = (typeof MealCategoryScalarFieldEnum)[keyof typeof MealCategoryScalarFieldEnum]
@@ -134,7 +134,7 @@ export const OrderItemScalarFieldEnum = {
   quantity: 'quantity',
   price: 'price',
   createdAt: 'createdAt',
-  updateAt: 'updateAt'
+  updatedAt: 'updatedAt'
 } as const
 
 export type OrderItemScalarFieldEnum = (typeof OrderItemScalarFieldEnum)[keyof typeof OrderItemScalarFieldEnum]

@@ -1,19 +1,22 @@
-
-
-model Meal{
-    id String @id @default(uuid())
-    mealName String?
-    providerInfo ProviderProfile @relation(fields: [providerId],references: [id])
-    providerId String
-    isAvailable Boolean ?
-    price Int
-    createdAt DateTime @default(now())
-    updateAt DateTime @updatedAt
-    
-
-
+model Meal {
+    id                String                   @id @default(uuid())
+    mealName          String?
+    providerInfo      ProviderProfile          @relation(fields: [providerId], references: [id])
+    providerId        String
+    isAvailable       Boolean?
+    price             Int
+    createdAt         DateTime                 @default(now())
+    updateAt          DateTime                 @updatedAt
+    dietaryPreference DietaryPreferenceInclude @default(HALAL)
 
     mealCategories MealCategory[]
 
     orderItems OrderItem[]
+}
+
+
+
+enum DietaryPreferenceInclude{
+    VEGAN
+    HALAL
 }

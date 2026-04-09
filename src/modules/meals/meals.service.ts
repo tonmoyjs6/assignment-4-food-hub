@@ -12,24 +12,89 @@ const createMeals = async (payload: any) => {
 
 // not use filtr after make catgeory data then make filter for use
 
-const getAllMeals=async()=>{
-    const allMeals= await prisma.meal.findMany()
+const getAllMeals = async () => {
+    const allMeals = await prisma.meal.findMany()
     return allMeals
 
 }
 
 
-const filterMeals=async(payload:any)=>{
+const filterMeals = async (payload: any) => {
 
-    const {catgeory}=payload
+    const { category, dietarypreferences, maxPrice ,minPrice} = payload
+    let filterInput: any = {}
+    // console.log(dietarypreferences);
+
+    if (category) {
+        filterInput.mealCategories = {
+            some: {
+                categoryInfo: {
+                    cuisineName: category
+                }
+            }
+        }
+
+    }
+
+    if (dietarypreferences) {
+        filterInput.mealCategories = {
+            some: {
+                // ...filterInput.mealCategories?.some,
+                dietaryPreference: dietarypreferences
+            }
+
+        }
+    }
+
+    if (minPrice || maxPrice) {
+    filterInput.price = {
+        ...(minPrice && { gte: Number(minPrice) }),
+        ...(maxPrice && { lte: Number(maxPrice) })
+    }
+}
+
+
+
+    try {
+        const result = await prisma.meal.findMany({
+            where: filterInput
+
+        })
+        return result
+
+    } catch (error) {
+
+    }
+
+
+
+}
+
+
+
+const getMealDetail=async(id:string)=>{
+    try {
+        const result= await prisma.meal.findUnique(
+            {
+                where:{
+                    id
+                }
+            }
+        )
+        
+
+        return result
+    } catch (error) {
+        
+    }
     
-
 
 }
 
 export const mealsService = {
     createMeals,
     getAllMeals,
-    filterMeals
-    
+    filterMeals,
+    getMealDetail
+
 }

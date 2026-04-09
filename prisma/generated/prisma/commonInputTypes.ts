@@ -139,6 +139,13 @@ export type IntFilter<$PrismaModel = never> = {
   not?: Prisma.NestedIntFilter<$PrismaModel> | number
 }
 
+export type EnumDietaryPreferenceIncludeFilter<$PrismaModel = never> = {
+  equals?: $Enums.DietaryPreferenceInclude | Prisma.EnumDietaryPreferenceIncludeFieldRefInput<$PrismaModel>
+  in?: $Enums.DietaryPreferenceInclude[] | Prisma.ListEnumDietaryPreferenceIncludeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.DietaryPreferenceInclude[] | Prisma.ListEnumDietaryPreferenceIncludeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumDietaryPreferenceIncludeFilter<$PrismaModel> | $Enums.DietaryPreferenceInclude
+}
+
 export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
   equals?: boolean | Prisma.BooleanFieldRefInput<$PrismaModel> | null
   not?: Prisma.NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
@@ -161,13 +168,6 @@ export type IntWithAggregatesFilter<$PrismaModel = never> = {
   _sum?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedIntFilter<$PrismaModel>
   _max?: Prisma.NestedIntFilter<$PrismaModel>
-}
-
-export type EnumDietaryPreferenceIncludeFilter<$PrismaModel = never> = {
-  equals?: $Enums.DietaryPreferenceInclude | Prisma.EnumDietaryPreferenceIncludeFieldRefInput<$PrismaModel>
-  in?: $Enums.DietaryPreferenceInclude[] | Prisma.ListEnumDietaryPreferenceIncludeFieldRefInput<$PrismaModel>
-  notIn?: $Enums.DietaryPreferenceInclude[] | Prisma.ListEnumDietaryPreferenceIncludeFieldRefInput<$PrismaModel>
-  not?: Prisma.NestedEnumDietaryPreferenceIncludeFilter<$PrismaModel> | $Enums.DietaryPreferenceInclude
 }
 
 export type EnumDietaryPreferenceIncludeWithAggregatesFilter<$PrismaModel = never> = {
@@ -368,6 +368,13 @@ export type NestedBoolNullableFilter<$PrismaModel = never> = {
   not?: Prisma.NestedBoolNullableFilter<$PrismaModel> | boolean | null
 }
 
+export type NestedEnumDietaryPreferenceIncludeFilter<$PrismaModel = never> = {
+  equals?: $Enums.DietaryPreferenceInclude | Prisma.EnumDietaryPreferenceIncludeFieldRefInput<$PrismaModel>
+  in?: $Enums.DietaryPreferenceInclude[] | Prisma.ListEnumDietaryPreferenceIncludeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.DietaryPreferenceInclude[] | Prisma.ListEnumDietaryPreferenceIncludeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumDietaryPreferenceIncludeFilter<$PrismaModel> | $Enums.DietaryPreferenceInclude
+}
+
 export type NestedBoolNullableWithAggregatesFilter<$PrismaModel = never> = {
   equals?: boolean | Prisma.BooleanFieldRefInput<$PrismaModel> | null
   not?: Prisma.NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
@@ -401,13 +408,6 @@ export type NestedFloatFilter<$PrismaModel = never> = {
   gt?: number | Prisma.FloatFieldRefInput<$PrismaModel>
   gte?: number | Prisma.FloatFieldRefInput<$PrismaModel>
   not?: Prisma.NestedFloatFilter<$PrismaModel> | number
-}
-
-export type NestedEnumDietaryPreferenceIncludeFilter<$PrismaModel = never> = {
-  equals?: $Enums.DietaryPreferenceInclude | Prisma.EnumDietaryPreferenceIncludeFieldRefInput<$PrismaModel>
-  in?: $Enums.DietaryPreferenceInclude[] | Prisma.ListEnumDietaryPreferenceIncludeFieldRefInput<$PrismaModel>
-  notIn?: $Enums.DietaryPreferenceInclude[] | Prisma.ListEnumDietaryPreferenceIncludeFieldRefInput<$PrismaModel>
-  not?: Prisma.NestedEnumDietaryPreferenceIncludeFilter<$PrismaModel> | $Enums.DietaryPreferenceInclude
 }
 
 export type NestedEnumDietaryPreferenceIncludeWithAggregatesFilter<$PrismaModel = never> = {

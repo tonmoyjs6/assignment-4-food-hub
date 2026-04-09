@@ -284,7 +284,7 @@ export type OrderScalarWhereWithAggregatesInput = {
 
 export type OrderCreateInput = {
   id?: string
-  totalAmount: number
+  totalAmount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
   userInfo: Prisma.UserCreateNestedOneWithoutOrdersInput
@@ -296,7 +296,7 @@ export type OrderUncheckedCreateInput = {
   id?: string
   userId: string
   providerId: string
-  totalAmount: number
+  totalAmount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
   orderItems?: Prisma.OrderItemUncheckedCreateNestedManyWithoutOrderInfoInput
@@ -326,7 +326,7 @@ export type OrderCreateManyInput = {
   id?: string
   userId: string
   providerId: string
-  totalAmount: number
+  totalAmount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -497,7 +497,7 @@ export type OrderUncheckedUpdateManyWithoutUserInfoNestedInput = {
 
 export type OrderCreateWithoutOrderItemsInput = {
   id?: string
-  totalAmount: number
+  totalAmount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
   userInfo: Prisma.UserCreateNestedOneWithoutOrdersInput
@@ -508,7 +508,7 @@ export type OrderUncheckedCreateWithoutOrderItemsInput = {
   id?: string
   userId: string
   providerId: string
-  totalAmount: number
+  totalAmount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -549,7 +549,7 @@ export type OrderUncheckedUpdateWithoutOrderItemsInput = {
 
 export type OrderCreateWithoutProviderInfoInput = {
   id?: string
-  totalAmount: number
+  totalAmount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
   userInfo: Prisma.UserCreateNestedOneWithoutOrdersInput
@@ -559,7 +559,7 @@ export type OrderCreateWithoutProviderInfoInput = {
 export type OrderUncheckedCreateWithoutProviderInfoInput = {
   id?: string
   userId: string
-  totalAmount: number
+  totalAmount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
   orderItems?: Prisma.OrderItemUncheckedCreateNestedManyWithoutOrderInfoInput
@@ -605,7 +605,7 @@ export type OrderScalarWhereInput = {
 
 export type OrderCreateWithoutUserInfoInput = {
   id?: string
-  totalAmount: number
+  totalAmount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
   providerInfo: Prisma.ProviderProfileCreateNestedOneWithoutOrdersInput
@@ -615,7 +615,7 @@ export type OrderCreateWithoutUserInfoInput = {
 export type OrderUncheckedCreateWithoutUserInfoInput = {
   id?: string
   providerId: string
-  totalAmount: number
+  totalAmount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
   orderItems?: Prisma.OrderItemUncheckedCreateNestedManyWithoutOrderInfoInput
@@ -650,7 +650,7 @@ export type OrderUpdateManyWithWhereWithoutUserInfoInput = {
 export type OrderCreateManyProviderInfoInput = {
   id?: string
   userId: string
-  totalAmount: number
+  totalAmount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -684,7 +684,7 @@ export type OrderUncheckedUpdateManyWithoutProviderInfoInput = {
 export type OrderCreateManyUserInfoInput = {
   id?: string
   providerId: string
-  totalAmount: number
+  totalAmount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
 }

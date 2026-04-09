@@ -42,6 +42,7 @@ export type MealMinAggregateOutputType = {
   price: number | null
   createdAt: Date | null
   updateAt: Date | null
+  dietaryPreference: $Enums.DietaryPreferenceInclude | null
 }
 
 export type MealMaxAggregateOutputType = {
@@ -52,6 +53,7 @@ export type MealMaxAggregateOutputType = {
   price: number | null
   createdAt: Date | null
   updateAt: Date | null
+  dietaryPreference: $Enums.DietaryPreferenceInclude | null
 }
 
 export type MealCountAggregateOutputType = {
@@ -62,6 +64,7 @@ export type MealCountAggregateOutputType = {
   price: number
   createdAt: number
   updateAt: number
+  dietaryPreference: number
   _all: number
 }
 
@@ -82,6 +85,7 @@ export type MealMinAggregateInputType = {
   price?: true
   createdAt?: true
   updateAt?: true
+  dietaryPreference?: true
 }
 
 export type MealMaxAggregateInputType = {
@@ -92,6 +96,7 @@ export type MealMaxAggregateInputType = {
   price?: true
   createdAt?: true
   updateAt?: true
+  dietaryPreference?: true
 }
 
 export type MealCountAggregateInputType = {
@@ -102,6 +107,7 @@ export type MealCountAggregateInputType = {
   price?: true
   createdAt?: true
   updateAt?: true
+  dietaryPreference?: true
   _all?: true
 }
 
@@ -199,6 +205,7 @@ export type MealGroupByOutputType = {
   price: number
   createdAt: Date
   updateAt: Date
+  dietaryPreference: $Enums.DietaryPreferenceInclude
   _count: MealCountAggregateOutputType | null
   _avg: MealAvgAggregateOutputType | null
   _sum: MealSumAggregateOutputType | null
@@ -232,6 +239,7 @@ export type MealWhereInput = {
   price?: Prisma.IntFilter<"Meal"> | number
   createdAt?: Prisma.DateTimeFilter<"Meal"> | Date | string
   updateAt?: Prisma.DateTimeFilter<"Meal"> | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFilter<"Meal"> | $Enums.DietaryPreferenceInclude
   providerInfo?: Prisma.XOR<Prisma.ProviderProfileScalarRelationFilter, Prisma.ProviderProfileWhereInput>
   mealCategories?: Prisma.MealCategoryListRelationFilter
   orderItems?: Prisma.OrderItemListRelationFilter
@@ -245,6 +253,7 @@ export type MealOrderByWithRelationInput = {
   price?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updateAt?: Prisma.SortOrder
+  dietaryPreference?: Prisma.SortOrder
   providerInfo?: Prisma.ProviderProfileOrderByWithRelationInput
   mealCategories?: Prisma.MealCategoryOrderByRelationAggregateInput
   orderItems?: Prisma.OrderItemOrderByRelationAggregateInput
@@ -261,6 +270,7 @@ export type MealWhereUniqueInput = Prisma.AtLeast<{
   price?: Prisma.IntFilter<"Meal"> | number
   createdAt?: Prisma.DateTimeFilter<"Meal"> | Date | string
   updateAt?: Prisma.DateTimeFilter<"Meal"> | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFilter<"Meal"> | $Enums.DietaryPreferenceInclude
   providerInfo?: Prisma.XOR<Prisma.ProviderProfileScalarRelationFilter, Prisma.ProviderProfileWhereInput>
   mealCategories?: Prisma.MealCategoryListRelationFilter
   orderItems?: Prisma.OrderItemListRelationFilter
@@ -274,6 +284,7 @@ export type MealOrderByWithAggregationInput = {
   price?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updateAt?: Prisma.SortOrder
+  dietaryPreference?: Prisma.SortOrder
   _count?: Prisma.MealCountOrderByAggregateInput
   _avg?: Prisma.MealAvgOrderByAggregateInput
   _max?: Prisma.MealMaxOrderByAggregateInput
@@ -292,6 +303,7 @@ export type MealScalarWhereWithAggregatesInput = {
   price?: Prisma.IntWithAggregatesFilter<"Meal"> | number
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Meal"> | Date | string
   updateAt?: Prisma.DateTimeWithAggregatesFilter<"Meal"> | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeWithAggregatesFilter<"Meal"> | $Enums.DietaryPreferenceInclude
 }
 
 export type MealCreateInput = {
@@ -301,6 +313,7 @@ export type MealCreateInput = {
   price: number
   createdAt?: Date | string
   updateAt?: Date | string
+  dietaryPreference?: $Enums.DietaryPreferenceInclude
   providerInfo: Prisma.ProviderProfileCreateNestedOneWithoutMealsInput
   mealCategories?: Prisma.MealCategoryCreateNestedManyWithoutMealinfoInput
   orderItems?: Prisma.OrderItemCreateNestedManyWithoutMealInfoInput
@@ -314,6 +327,7 @@ export type MealUncheckedCreateInput = {
   price: number
   createdAt?: Date | string
   updateAt?: Date | string
+  dietaryPreference?: $Enums.DietaryPreferenceInclude
   mealCategories?: Prisma.MealCategoryUncheckedCreateNestedManyWithoutMealinfoInput
   orderItems?: Prisma.OrderItemUncheckedCreateNestedManyWithoutMealInfoInput
 }
@@ -325,6 +339,7 @@ export type MealUpdateInput = {
   price?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updateAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFieldUpdateOperationsInput | $Enums.DietaryPreferenceInclude
   providerInfo?: Prisma.ProviderProfileUpdateOneRequiredWithoutMealsNestedInput
   mealCategories?: Prisma.MealCategoryUpdateManyWithoutMealinfoNestedInput
   orderItems?: Prisma.OrderItemUpdateManyWithoutMealInfoNestedInput
@@ -338,6 +353,7 @@ export type MealUncheckedUpdateInput = {
   price?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updateAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFieldUpdateOperationsInput | $Enums.DietaryPreferenceInclude
   mealCategories?: Prisma.MealCategoryUncheckedUpdateManyWithoutMealinfoNestedInput
   orderItems?: Prisma.OrderItemUncheckedUpdateManyWithoutMealInfoNestedInput
 }
@@ -350,6 +366,7 @@ export type MealCreateManyInput = {
   price: number
   createdAt?: Date | string
   updateAt?: Date | string
+  dietaryPreference?: $Enums.DietaryPreferenceInclude
 }
 
 export type MealUpdateManyMutationInput = {
@@ -359,6 +376,7 @@ export type MealUpdateManyMutationInput = {
   price?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updateAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFieldUpdateOperationsInput | $Enums.DietaryPreferenceInclude
 }
 
 export type MealUncheckedUpdateManyInput = {
@@ -369,6 +387,7 @@ export type MealUncheckedUpdateManyInput = {
   price?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updateAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFieldUpdateOperationsInput | $Enums.DietaryPreferenceInclude
 }
 
 export type MealCountOrderByAggregateInput = {
@@ -379,6 +398,7 @@ export type MealCountOrderByAggregateInput = {
   price?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updateAt?: Prisma.SortOrder
+  dietaryPreference?: Prisma.SortOrder
 }
 
 export type MealAvgOrderByAggregateInput = {
@@ -393,6 +413,7 @@ export type MealMaxOrderByAggregateInput = {
   price?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updateAt?: Prisma.SortOrder
+  dietaryPreference?: Prisma.SortOrder
 }
 
 export type MealMinOrderByAggregateInput = {
@@ -403,6 +424,7 @@ export type MealMinOrderByAggregateInput = {
   price?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updateAt?: Prisma.SortOrder
+  dietaryPreference?: Prisma.SortOrder
 }
 
 export type MealSumOrderByAggregateInput = {
@@ -434,6 +456,10 @@ export type IntFieldUpdateOperationsInput = {
   decrement?: number
   multiply?: number
   divide?: number
+}
+
+export type EnumDietaryPreferenceIncludeFieldUpdateOperationsInput = {
+  set?: $Enums.DietaryPreferenceInclude
 }
 
 export type MealCreateNestedOneWithoutMealCategoriesInput = {
@@ -513,6 +539,7 @@ export type MealCreateWithoutMealCategoriesInput = {
   price: number
   createdAt?: Date | string
   updateAt?: Date | string
+  dietaryPreference?: $Enums.DietaryPreferenceInclude
   providerInfo: Prisma.ProviderProfileCreateNestedOneWithoutMealsInput
   orderItems?: Prisma.OrderItemCreateNestedManyWithoutMealInfoInput
 }
@@ -525,6 +552,7 @@ export type MealUncheckedCreateWithoutMealCategoriesInput = {
   price: number
   createdAt?: Date | string
   updateAt?: Date | string
+  dietaryPreference?: $Enums.DietaryPreferenceInclude
   orderItems?: Prisma.OrderItemUncheckedCreateNestedManyWithoutMealInfoInput
 }
 
@@ -551,6 +579,7 @@ export type MealUpdateWithoutMealCategoriesInput = {
   price?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updateAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFieldUpdateOperationsInput | $Enums.DietaryPreferenceInclude
   providerInfo?: Prisma.ProviderProfileUpdateOneRequiredWithoutMealsNestedInput
   orderItems?: Prisma.OrderItemUpdateManyWithoutMealInfoNestedInput
 }
@@ -563,6 +592,7 @@ export type MealUncheckedUpdateWithoutMealCategoriesInput = {
   price?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updateAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFieldUpdateOperationsInput | $Enums.DietaryPreferenceInclude
   orderItems?: Prisma.OrderItemUncheckedUpdateManyWithoutMealInfoNestedInput
 }
 
@@ -573,6 +603,7 @@ export type MealCreateWithoutOrderItemsInput = {
   price: number
   createdAt?: Date | string
   updateAt?: Date | string
+  dietaryPreference?: $Enums.DietaryPreferenceInclude
   providerInfo: Prisma.ProviderProfileCreateNestedOneWithoutMealsInput
   mealCategories?: Prisma.MealCategoryCreateNestedManyWithoutMealinfoInput
 }
@@ -585,6 +616,7 @@ export type MealUncheckedCreateWithoutOrderItemsInput = {
   price: number
   createdAt?: Date | string
   updateAt?: Date | string
+  dietaryPreference?: $Enums.DietaryPreferenceInclude
   mealCategories?: Prisma.MealCategoryUncheckedCreateNestedManyWithoutMealinfoInput
 }
 
@@ -611,6 +643,7 @@ export type MealUpdateWithoutOrderItemsInput = {
   price?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updateAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFieldUpdateOperationsInput | $Enums.DietaryPreferenceInclude
   providerInfo?: Prisma.ProviderProfileUpdateOneRequiredWithoutMealsNestedInput
   mealCategories?: Prisma.MealCategoryUpdateManyWithoutMealinfoNestedInput
 }
@@ -623,6 +656,7 @@ export type MealUncheckedUpdateWithoutOrderItemsInput = {
   price?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updateAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFieldUpdateOperationsInput | $Enums.DietaryPreferenceInclude
   mealCategories?: Prisma.MealCategoryUncheckedUpdateManyWithoutMealinfoNestedInput
 }
 
@@ -633,6 +667,7 @@ export type MealCreateWithoutProviderInfoInput = {
   price: number
   createdAt?: Date | string
   updateAt?: Date | string
+  dietaryPreference?: $Enums.DietaryPreferenceInclude
   mealCategories?: Prisma.MealCategoryCreateNestedManyWithoutMealinfoInput
   orderItems?: Prisma.OrderItemCreateNestedManyWithoutMealInfoInput
 }
@@ -644,6 +679,7 @@ export type MealUncheckedCreateWithoutProviderInfoInput = {
   price: number
   createdAt?: Date | string
   updateAt?: Date | string
+  dietaryPreference?: $Enums.DietaryPreferenceInclude
   mealCategories?: Prisma.MealCategoryUncheckedCreateNestedManyWithoutMealinfoInput
   orderItems?: Prisma.OrderItemUncheckedCreateNestedManyWithoutMealInfoInput
 }
@@ -685,6 +721,7 @@ export type MealScalarWhereInput = {
   price?: Prisma.IntFilter<"Meal"> | number
   createdAt?: Prisma.DateTimeFilter<"Meal"> | Date | string
   updateAt?: Prisma.DateTimeFilter<"Meal"> | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFilter<"Meal"> | $Enums.DietaryPreferenceInclude
 }
 
 export type MealCreateManyProviderInfoInput = {
@@ -694,6 +731,7 @@ export type MealCreateManyProviderInfoInput = {
   price: number
   createdAt?: Date | string
   updateAt?: Date | string
+  dietaryPreference?: $Enums.DietaryPreferenceInclude
 }
 
 export type MealUpdateWithoutProviderInfoInput = {
@@ -703,6 +741,7 @@ export type MealUpdateWithoutProviderInfoInput = {
   price?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updateAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFieldUpdateOperationsInput | $Enums.DietaryPreferenceInclude
   mealCategories?: Prisma.MealCategoryUpdateManyWithoutMealinfoNestedInput
   orderItems?: Prisma.OrderItemUpdateManyWithoutMealInfoNestedInput
 }
@@ -714,6 +753,7 @@ export type MealUncheckedUpdateWithoutProviderInfoInput = {
   price?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updateAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFieldUpdateOperationsInput | $Enums.DietaryPreferenceInclude
   mealCategories?: Prisma.MealCategoryUncheckedUpdateManyWithoutMealinfoNestedInput
   orderItems?: Prisma.OrderItemUncheckedUpdateManyWithoutMealInfoNestedInput
 }
@@ -725,6 +765,7 @@ export type MealUncheckedUpdateManyWithoutProviderInfoInput = {
   price?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updateAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dietaryPreference?: Prisma.EnumDietaryPreferenceIncludeFieldUpdateOperationsInput | $Enums.DietaryPreferenceInclude
 }
 
 
@@ -775,6 +816,7 @@ export type MealSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   price?: boolean
   createdAt?: boolean
   updateAt?: boolean
+  dietaryPreference?: boolean
   providerInfo?: boolean | Prisma.ProviderProfileDefaultArgs<ExtArgs>
   mealCategories?: boolean | Prisma.Meal$mealCategoriesArgs<ExtArgs>
   orderItems?: boolean | Prisma.Meal$orderItemsArgs<ExtArgs>
@@ -789,6 +831,7 @@ export type MealSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   price?: boolean
   createdAt?: boolean
   updateAt?: boolean
+  dietaryPreference?: boolean
   providerInfo?: boolean | Prisma.ProviderProfileDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["meal"]>
 
@@ -800,6 +843,7 @@ export type MealSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   price?: boolean
   createdAt?: boolean
   updateAt?: boolean
+  dietaryPreference?: boolean
   providerInfo?: boolean | Prisma.ProviderProfileDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["meal"]>
 
@@ -811,9 +855,10 @@ export type MealSelectScalar = {
   price?: boolean
   createdAt?: boolean
   updateAt?: boolean
+  dietaryPreference?: boolean
 }
 
-export type MealOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "mealName" | "providerId" | "isAvailable" | "price" | "createdAt" | "updateAt", ExtArgs["result"]["meal"]>
+export type MealOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "mealName" | "providerId" | "isAvailable" | "price" | "createdAt" | "updateAt" | "dietaryPreference", ExtArgs["result"]["meal"]>
 export type MealInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   providerInfo?: boolean | Prisma.ProviderProfileDefaultArgs<ExtArgs>
   mealCategories?: boolean | Prisma.Meal$mealCategoriesArgs<ExtArgs>
@@ -842,6 +887,7 @@ export type $MealPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     price: number
     createdAt: Date
     updateAt: Date
+    dietaryPreference: $Enums.DietaryPreferenceInclude
   }, ExtArgs["result"]["meal"]>
   composites: {}
 }
@@ -1275,6 +1321,7 @@ export interface MealFieldRefs {
   readonly price: Prisma.FieldRef<"Meal", 'Int'>
   readonly createdAt: Prisma.FieldRef<"Meal", 'DateTime'>
   readonly updateAt: Prisma.FieldRef<"Meal", 'DateTime'>
+  readonly dietaryPreference: Prisma.FieldRef<"Meal", 'DietaryPreferenceInclude'>
 }
     
 

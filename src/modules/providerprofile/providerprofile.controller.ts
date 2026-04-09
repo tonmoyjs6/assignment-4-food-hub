@@ -27,9 +27,10 @@ const allProvider:RequestHandler=async(req,res)=>{
 }
 
 
-
+// aita thik hoi nai
 const singleProviderProfileaAndMeanus:RequestHandler=async(req,res)=>{
-    const {id}=req.params 
+    const {id}=req.params
+    console.log(id);
     
      try {
         if(typeof id==="string"){

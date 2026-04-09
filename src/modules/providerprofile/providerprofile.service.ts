@@ -31,6 +31,7 @@ const allProvider=async()=>{
 }
 
 const singleProviderProfileaAndMeanus=async(id:string)=>{
+
     const singleProviderInfo=await prisma.providerProfile.findUnique({
         where:{
             id:id

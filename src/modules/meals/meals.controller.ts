@@ -11,14 +11,47 @@ const createMeals: RequestHandler = async (req, res) => {
     }
 }
 
-const getAllMeals=async(req:Request,res:Response)=>{
-    
-    
-    
+const getAllMeals = async (req: Request, res: Response) => {
+
+
+
 
 
     try {
-        const result= await mealsService.getAllMeals()
+        const result = await mealsService.getAllMeals()
+        res.status(200).json({
+            result
+        })
+
+    } catch (error) {
+
+    }
+
+}
+
+const filterMeals = async (req: Request, res: Response) => {
+    // console.log(req.query);
+
+    try {
+        const result = await mealsService.filterMeals(req.query)
+        res.status(200).json({ result })
+
+
+    } catch (error) {
+
+    }
+}
+
+
+
+const getMealDetail=async(req:Request,res:Response)=>{
+    
+
+    const id= req.params.id as string
+
+    try {
+        const result= await mealsService.getMealDetail(id)
+
         res.status(200).json({
             result
         })
@@ -29,17 +62,12 @@ const getAllMeals=async(req:Request,res:Response)=>{
 
 }
 
-const filterMeals=async(req:Request,res:Response)=>{
-
-    const result= await mealsService.filterMeals(req.query)
-    res.status(200).json({result})
-    
-}
-
-
 export const mealsController = {
     createMeals,
     getAllMeals,
-    filterMeals
-    
+    filterMeals,
+    getMealDetail
+
 }
+
+

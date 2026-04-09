@@ -8,5 +8,5 @@ model OrderItem{
     quantity Int
     price Int
     createdAt DateTime @default(now())
-    updateAt DateTime @updatedAt
+    updatedAt DateTime @updatedAt
 }

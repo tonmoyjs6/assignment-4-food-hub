@@ -8,9 +8,7 @@ const router=express.Router()
 router.post("/create",mealsController.createMeals)
 router.get("/all-meals",mealsController.getAllMeals)
 router.get("/filter-meals",mealsController.filterMeals)
-
-
-
+router.get("/:id",mealsController.getMealDetail)
 
 
 export const mealsRouter=router

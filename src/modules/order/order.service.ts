@@ -3,6 +3,7 @@ import { prisma } from "../../lib/prisma";
 import { orderInput } from "./order.interface";
 
 const orderCreate=async(payload:orderInput)=>{
+    // console.log("hell");
     try {
 
         const {userId,providerId}=payload
@@ -30,6 +31,7 @@ const orderCreate=async(payload:orderInput)=>{
                 providerId
             }
         })
+        return result
         
 
         
@@ -42,9 +44,26 @@ const orderCreate=async(payload:orderInput)=>{
     
 
 }
-
+const getUserOrder=async({id,name,email}:{id:string,name:string,email:string})=>{
+    
+    const userDetailOrder= await prisma.order.findMany({
+        where:{
+            userId:id
+        },
+        include:{
+            orderItems:{
+            include:{
+                mealInfo:true
+            }
+            }
+        }
+    })
+    // console.log();
+    return userDetailOrder
+}
 
 
 export const orderService={
-    orderCreate
+    orderCreate,
+    getUserOrder
 }

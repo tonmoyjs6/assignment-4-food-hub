@@ -3,24 +3,24 @@ import { orderItemService } from "./orderItem.service";
 
 
 
-const orderItemCreate=async(req:Request,res:Response)=>{
+const orderItemCreate = async (req: Request, res: Response) => {
+  try {
+    const result = await orderItemService.orderItemCreate(req.body);
 
-    try {
-        const {userId,providerId}=req.body
-        const result= await orderItemService.orderItemCreate()
+    return res.status(201).json({
+      success: true,
+      data: result,
+    });
 
-        
+  } catch (error: any) {
+    console.log(error);
 
-    } catch (error) {
-        
-    }
-
-
-    
-
-
-}
-
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
 export const orderItemcontroller={
     orderItemCreate
 }

@@ -1,4 +1,4 @@
-import { RequestHandler } from "express";
+import { Request, RequestHandler, Response } from "express";
 import { providerProfileService } from "./providerprofile.service";
 
 
@@ -14,7 +14,15 @@ const createProviderProfile:RequestHandler=async(req,res)=>{
         }
 }
 
+const createMeals: RequestHandler = async (req, res) => {
 
+    try {
+        const result = await providerProfileService.createMeals(req.body)
+        res.status(201).json(result)
+    } catch (error) {
+        res.status(400).json(error)
+    }
+}
 
 const allProvider:RequestHandler=async(req,res)=>{
 
@@ -45,8 +53,24 @@ const singleProviderProfileaAndMeanus:RequestHandler=async(req,res)=>{
 
 }
 
+const updateMeal=async(req:Request,res:Response)=>{
+
+    try {
+        const id= req.params.id as string
+        
+
+        const result= await providerProfileService.updateMeal(id,req.body)
+        res.status(201).json(result)
+    } catch (error) {
+        
+    }
+
+}
+
 export const providerController={
     allProvider,
     createProviderProfile,
-    singleProviderProfileaAndMeanus
+    singleProviderProfileaAndMeanus,
+    createMeals,
+    updateMeal
 }

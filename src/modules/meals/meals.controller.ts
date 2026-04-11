@@ -62,6 +62,11 @@ const getMealDetail=async(req:Request,res:Response)=>{
 
 }
 
+
+// update method=put
+
+
+
 export const mealsController = {
     createMeals,
     getAllMeals,

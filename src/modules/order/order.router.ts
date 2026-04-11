@@ -11,6 +11,7 @@ router.post("/orderCreate",ordercontroller.orderCreate)
 
 
 router.get("/api/orders",checkAuth("CUSTOMER"),ordercontroller.getUserOrder)
+router.get("/:orderId",ordercontroller.orderDetails)
 
 
 

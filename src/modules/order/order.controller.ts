@@ -28,7 +28,25 @@ const getUserOrder=async(req:Request,res:Response)=>{
 
 }
 
+// total amount add kora hoy nai
+const orderDetails=async(req:Request,res:Response)=>{
+    try {
+        const id= req.params.orderId 
+        if(typeof id !=="string"){
+            throw new Error("id should be string")
+            
+        }
+        const result=await orderService.orderDetails(id)
+        res.status(200).json(result)
+        
+    } catch (error) {
+        
+    }
+
+}
+
 export const ordercontroller={
     orderCreate,
-    getUserOrder
+    getUserOrder,
+    orderDetails
 }

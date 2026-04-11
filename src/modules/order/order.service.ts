@@ -63,7 +63,26 @@ const getUserOrder=async({id,name,email}:{id:string,name:string,email:string})=>
 }
 
 
+
+const orderDetails=async(id:string )=>{
+    try {
+
+        const result= await prisma.order.findUnique({
+            where:{
+                id
+            }
+        })
+        return result
+        
+    } catch (error) {
+        
+    }
+
+}
+
+
 export const orderService={
     orderCreate,
-    getUserOrder
+    getUserOrder,
+    orderDetails
 }

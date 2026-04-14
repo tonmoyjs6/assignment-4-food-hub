@@ -3,7 +3,7 @@ model OrderItem{
     id String @id @default(uuid())
     orderInfo Order @relation(fields: [orderId],references: [id])
     orderId String
-    mealInfo Meal @relation(fields: [mealId],references: [id])
+    mealInfo Meal @relation(fields: [mealId],references: [id],onDelete: Cascade)
     mealId String
     quantity Int
     price Int

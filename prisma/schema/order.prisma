@@ -8,6 +8,15 @@ model Order{
     totalAmount Int @default(0)
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+    orderStatus status @default(PREPARING)
 
     orderItems OrderItem[]
+}
+
+
+
+enum status{
+    PREPARING   
+    READY
+    DELIVERED   
 }

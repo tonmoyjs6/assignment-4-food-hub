@@ -7,7 +7,7 @@ model User{
   role  UserRole @default(CUSTOMER)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt()
-  status  Status @default(ACTIVE)
+  status  STATUS @default(ACTIVE)
 
 
   providerProfiles ProviderProfile?
@@ -27,7 +27,7 @@ enum UserRole{
 
 }
 
-enum Status{
+enum STATUS{
   ACTIVE
   SUSPENDED
 }

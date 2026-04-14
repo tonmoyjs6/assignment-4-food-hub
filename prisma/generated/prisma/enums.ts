@@ -17,6 +17,15 @@ export const DietaryPreferenceInclude = {
 export type DietaryPreferenceInclude = (typeof DietaryPreferenceInclude)[keyof typeof DietaryPreferenceInclude]
 
 
+export const status = {
+  PREPARING: 'PREPARING',
+  READY: 'READY',
+  DELIVERED: 'DELIVERED'
+} as const
+
+export type status = (typeof status)[keyof typeof status]
+
+
 export const UserRole = {
   CUSTOMER: 'CUSTOMER',
   ADMIN: 'ADMIN',
@@ -26,9 +35,9 @@ export const UserRole = {
 export type UserRole = (typeof UserRole)[keyof typeof UserRole]
 
 
-export const Status = {
+export const STATUS = {
   ACTIVE: 'ACTIVE',
   SUSPENDED: 'SUSPENDED'
 } as const
 
-export type Status = (typeof Status)[keyof typeof Status]
+export type STATUS = (typeof STATUS)[keyof typeof STATUS]

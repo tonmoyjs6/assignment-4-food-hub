@@ -1,0 +1,15 @@
+/*
+  Warnings:
+
+  - The `status` column on the `User` table would be dropped and recreated. This will lead to data loss if there is data in the column.
+
+*/
+-- CreateEnum
+CREATE TYPE "STATUS" AS ENUM ('ACTIVE', 'SUSPENDED');
+
+-- AlterTable
+ALTER TABLE "User" DROP COLUMN "status",
+ADD COLUMN     "status" "STATUS" NOT NULL DEFAULT 'ACTIVE';
+
+-- DropEnum
+DROP TYPE "Status";

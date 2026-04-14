@@ -5,7 +5,7 @@ model MealCategory{
     id String @id @default(uuid())
     categoryInfo Category @relation(fields: [categoryId],references: [id])
     categoryId String
-    mealinfo Meal @relation(fields: [mealId],references: [id])
+    mealinfo Meal @relation(fields: [mealId],references: [id],onDelete: Cascade)
     mealId String
     createdAt DateTime @default(now())
     updateAt DateTime @updatedAt

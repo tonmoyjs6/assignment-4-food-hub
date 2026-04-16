@@ -29,8 +29,8 @@ export * from "./enums"
  * @example
  * ```
  * const prisma = new PrismaClient()
- * // Fetch zero or more Categories
- * const categories = await prisma.category.findMany()
+ * // Fetch zero or more Carts
+ * const carts = await prisma.cart.findMany()
  * ```
  * 
  * Read more in our [docs](https://pris.ly/d/client).
@@ -40,10 +40,25 @@ export type PrismaClient<LogOpts extends Prisma.LogLevel = never, OmitOpts exten
 export { Prisma }
 
 /**
+ * Model Cart
+ * 
+ */
+export type Cart = Prisma.CartModel
+/**
+ * Model CartItem
+ * 
+ */
+export type CartItem = Prisma.CartItemModel
+/**
  * Model Category
  * 
  */
 export type Category = Prisma.CategoryModel
+/**
+ * Model Checkout
+ * 
+ */
+export type Checkout = Prisma.CheckoutModel
 /**
  * Model Meal
  * 

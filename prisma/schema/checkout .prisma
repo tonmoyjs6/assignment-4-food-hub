@@ -1,0 +1,53 @@
+
+
+model Checkout {
+    id           String          @id @default(uuid())
+    cartInfo     Cart            @relation(fields: [cartId], references: [id])
+    cartId       String          @unique
+    userInfo     User            @relation(fields: [userId], references: [id])
+    userId       String
+    providerInfo ProviderProfile @relation(fields: [providerId], references: [id])
+    providerId   String
+
+    
+    deliveryAddress String
+    deliveryPhone   String
+    deliveryNote    String?
+
+    subTotal    Int
+    deliveryFee Int @default(0)
+    discount    Int @default(0)
+    totalAmount Int
+
+    
+    paymentMethod PaymentMethod @default(CASH_ON_DELIVERY)
+    paymentStatus PaymentStatus @default(PENDING)
+    transactionId String?
+
+    checkoutStatus CheckoutStatus @default(PENDING)
+    createdAt      DateTime       @default(now())
+    updatedAt      DateTime       @updatedAt
+
+    order   Order?  @relation(fields: [orderid], references: [id])
+    orderid String?
+}
+
+enum PaymentMethod {
+    CASH_ON_DELIVERY 
+    BKASH 
+    NAGAD 
+    CARD 
+}
+
+enum PaymentStatus {
+    PENDING 
+    PAID 
+    FAILED 
+    REFUNDED
+}
+
+enum CheckoutStatus {
+    PENDING 
+    CONFIRMED 
+    CANCELLED 
+}

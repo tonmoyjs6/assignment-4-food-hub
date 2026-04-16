@@ -12,6 +12,8 @@ model Meal {
     mealCategories MealCategory[]
 
     orderItems OrderItem[]
+
+    cartItems CartItem[]
 }
 
 

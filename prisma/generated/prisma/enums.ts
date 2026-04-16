@@ -9,6 +9,44 @@
 * 🟢 You can import this file directly.
 */
 
+export const CartStatus = {
+  ACTIVE: 'ACTIVE',
+  CHECKED_OUT: 'CHECKED_OUT',
+  ABANDONED: 'ABANDONED'
+} as const
+
+export type CartStatus = (typeof CartStatus)[keyof typeof CartStatus]
+
+
+export const PaymentMethod = {
+  CASH_ON_DELIVERY: 'CASH_ON_DELIVERY',
+  BKASH: 'BKASH',
+  NAGAD: 'NAGAD',
+  CARD: 'CARD'
+} as const
+
+export type PaymentMethod = (typeof PaymentMethod)[keyof typeof PaymentMethod]
+
+
+export const PaymentStatus = {
+  PENDING: 'PENDING',
+  PAID: 'PAID',
+  FAILED: 'FAILED',
+  REFUNDED: 'REFUNDED'
+} as const
+
+export type PaymentStatus = (typeof PaymentStatus)[keyof typeof PaymentStatus]
+
+
+export const CheckoutStatus = {
+  PENDING: 'PENDING',
+  CONFIRMED: 'CONFIRMED',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type CheckoutStatus = (typeof CheckoutStatus)[keyof typeof CheckoutStatus]
+
+
 export const DietaryPreferenceInclude = {
   VEGAN: 'VEGAN',
   HALAL: 'HALAL'

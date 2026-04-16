@@ -7,6 +7,7 @@ import { mealCategoryRouter } from "./modules/mealCategory/mealCategory.router"
 import { orderRouter } from "./modules/order/order.router"
 import { orderItemRouter } from "./modules/orderItem/orderitem.router"
 import { adminRouter } from "./modules/admin/admin.router"
+import { cartRouter } from "./modules/cart/cart.router"
 
 
 const app = express()
@@ -21,6 +22,6 @@ app.use("/api/v1/mealCategory",mealCategoryRouter)
 app.use("/api/v1/orders",orderRouter)
 app.use("/api/v1/orderItem",orderItemRouter)
 app.use("/api/v1/admin",adminRouter)
-
+app.use("/api/v1/cart",cartRouter)
 
 export default app

@@ -17,6 +17,10 @@ model User{
   orders Order[]
 
   reviews Review[]
+
+  checkouts Checkout[]
+
+  carts Cart[]
 }
 
 // userRole will be change

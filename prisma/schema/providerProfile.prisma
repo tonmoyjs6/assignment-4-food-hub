@@ -15,4 +15,6 @@ model ProviderProfile{
     orders Order[]
 
     reviews Review[]
+
+    checkouts Checkout[]
 }

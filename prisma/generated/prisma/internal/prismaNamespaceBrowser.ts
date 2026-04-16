@@ -51,7 +51,10 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
+  Cart: 'Cart',
+  CartItem: 'CartItem',
   Category: 'Category',
+  Checkout: 'Checkout',
   Meal: 'Meal',
   MealCategory: 'MealCategory',
   Order: 'Order',
@@ -77,6 +80,30 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+export const CartScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  cartStatus: 'cartStatus',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type CartScalarFieldEnum = (typeof CartScalarFieldEnum)[keyof typeof CartScalarFieldEnum]
+
+
+export const CartItemScalarFieldEnum = {
+  id: 'id',
+  cartId: 'cartId',
+  mealId: 'mealId',
+  quantity: 'quantity',
+  price: 'price',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type CartItemScalarFieldEnum = (typeof CartItemScalarFieldEnum)[keyof typeof CartItemScalarFieldEnum]
+
+
 export const CategoryScalarFieldEnum = {
   id: 'id',
   cuisineName: 'cuisineName',
@@ -88,6 +115,30 @@ export const CategoryScalarFieldEnum = {
 } as const
 
 export type CategoryScalarFieldEnum = (typeof CategoryScalarFieldEnum)[keyof typeof CategoryScalarFieldEnum]
+
+
+export const CheckoutScalarFieldEnum = {
+  id: 'id',
+  cartId: 'cartId',
+  userId: 'userId',
+  providerId: 'providerId',
+  deliveryAddress: 'deliveryAddress',
+  deliveryPhone: 'deliveryPhone',
+  deliveryNote: 'deliveryNote',
+  subTotal: 'subTotal',
+  deliveryFee: 'deliveryFee',
+  discount: 'discount',
+  totalAmount: 'totalAmount',
+  paymentMethod: 'paymentMethod',
+  paymentStatus: 'paymentStatus',
+  transactionId: 'transactionId',
+  checkoutStatus: 'checkoutStatus',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  orderid: 'orderid'
+} as const
+
+export type CheckoutScalarFieldEnum = (typeof CheckoutScalarFieldEnum)[keyof typeof CheckoutScalarFieldEnum]
 
 
 export const MealScalarFieldEnum = {

@@ -11,6 +11,8 @@ model Order{
     orderStatus status @default(PREPARING)
 
     orderItems OrderItem[]
+
+    checkouts Checkout[]
 }
 
 
